@@ -55,6 +55,7 @@
                     android:id="@+id/brief"
                     style="@style/Brief"
                     android:layout_margin="5dp"
+                    android:ellipsize="end"
                     android:text="This is as short message saying who you are and what you like to do."/>
 
                 <com.suleiman.material.about.views.AutoFitGridLayout
