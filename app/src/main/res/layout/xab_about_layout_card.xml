@@ -32,7 +32,7 @@
                 android:paddingLeft="3dp"
                 android:paddingRight="3dp">
 
-                <com.suleiman.material.about.views.CircleImageView
+                <com.ndroidpro.material.about.views.CircleImageView
                     android:id="@+id/photo"
                     android:layout_width="@dimen/profile_picture_size"
                     android:layout_height="@dimen/profile_picture_size"
@@ -51,14 +51,14 @@
                     style="@style/SubTitle"
                     android:text="Just a sub title"/>
 
-                <com.suleiman.material.utils.ExpandingTextView
+                <com.ndroidpro.material.utils.ExpandingTextView
                     android:id="@+id/brief"
                     style="@style/Brief"
                     android:layout_margin="5dp"
                     android:ellipsize="end"
                     android:text="This is as short message saying who you are and what you like to do."/>
 
-                <com.suleiman.material.about.views.AutoFitGridLayout
+                <com.ndroidpro.material.about.views.AutoFitGridLayout
                     android:id="@+id/links"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
                     android:paddingTop="@dimen/social_media_vertical_padding">
 
 
-                </com.suleiman.material.about.views.AutoFitGridLayout>
+                </com.ndroidpro.material.about.views.AutoFitGridLayout>
 
             </LinearLayout>
 
@@ -208,7 +208,7 @@
                 </LinearLayout>
             </RelativeLayout>
 
-            <com.suleiman.material.about.views.AutoFitGridLayout
+            <com.ndroidpro.material.about.views.AutoFitGridLayout
                 android:id="@+id/actions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -216,7 +216,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-            </com.suleiman.material.about.views.AutoFitGridLayout>
+            </com.ndroidpro.material.about.views.AutoFitGridLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>
 </android.support.v7.widget.LinearLayoutCompat>

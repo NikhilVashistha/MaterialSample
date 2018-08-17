@@ -182,7 +182,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
-        tools:context="com.suleiman.material.activities.MyProfileActivity">
+        tools:context="com.ndroidpro.material.activities.MyProfileActivity">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/nested_toolbar_1"
