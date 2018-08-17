@@ -23,6 +23,7 @@ import com.suleiman.material.about.builder.AboutBuilder;
 import com.suleiman.material.about.builder.Item;
 import com.suleiman.material.about.util.RippleUtil;
 import com.suleiman.material.about.util.VisibleUtil;
+import com.suleiman.material.utils.ExpandingTextView;
 import com.vansuita.library.Icon;
 
 
@@ -39,7 +40,7 @@ public final class AboutView extends FrameLayout {
     private ImageView ivCover;
     private TextView tvName;
     private TextView tvSubTitle;
-    private TextView tvBrief;
+    private ExpandingTextView tvBrief;
 
     private TextView tvAppName;
     private TextView tvAppTitle;
@@ -93,7 +94,7 @@ public final class AboutView extends FrameLayout {
         ivCover = (ImageView) findViewById(R.id.cover);
         tvName = (TextView) findViewById(R.id.name);
         tvSubTitle = (TextView) findViewById(R.id.sub_title);
-        tvBrief = (TextView) findViewById(R.id.brief);
+        tvBrief = (ExpandingTextView) findViewById(R.id.brief);
         tvAppName = (TextView) findViewById(R.id.app_name);
         tvAppTitle = (TextView) findViewById(R.id.app_title);
         ivAppIcon = (ImageView) findViewById(R.id.app_icon);

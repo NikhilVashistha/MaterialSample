@@ -51,7 +51,7 @@
                     style="@style/SubTitle"
                     android:text="Just a sub title"/>
 
-                <TextView
+                <com.suleiman.material.utils.ExpandingTextView
                     android:id="@+id/brief"
                     style="@style/Brief"
                     android:layout_margin="5dp"
