@@ -2,12 +2,10 @@ package com.ndroidpro.material.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.FrameLayout;
 
 import com.ndroidpro.material.R;
@@ -15,7 +13,6 @@ import com.ndroidpro.material.about.SampleHelper;
 
 public class MyProfileActivity extends AppCompatActivity {
 
-    Toolbar mToolbar1;
     private Menu menu;
 
     @Override
@@ -24,17 +21,7 @@ public class MyProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_profile);
 
-        mToolbar1 = (Toolbar) findViewById(R.id.nested_toolbar_1);
-
         final FrameLayout frameLayout = (FrameLayout) findViewById(R.id.nested_parentframe);
-
-        mToolbar1.setNavigationIcon(R.drawable.ic_drawer);
-        mToolbar1.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Snackbar.make(frameLayout, "Tapped Nav Drawer", Snackbar.LENGTH_SHORT).show();
-            }
-        });
 
         final Toolbar mToolbar = (Toolbar) findViewById(R.id.anim_toolbar);
         setSupportActionBar(mToolbar);

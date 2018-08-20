@@ -3,8 +3,6 @@ package com.ndroidpro.material.about;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v4.app.TaskStackBuilder;
-import android.view.View;
 import android.widget.FrameLayout;
 
 import com.ndroidpro.material.R;
@@ -14,7 +12,7 @@ import com.ndroidpro.material.about.views.AboutView;
 /**
  * Created by jrvansuita on 17/02/17.
  */
-public class SampleHelper implements View.OnClickListener {
+public class SampleHelper {
 
     private Activity activity;
     private int theme = R.style.MyProfileTheme;
@@ -33,9 +31,7 @@ public class SampleHelper implements View.OnClickListener {
     }
 
     private void findViews() {
-        activity.findViewById(R.id.dark).setOnClickListener(this);
-        activity.findViewById(R.id.light).setOnClickListener(this);
-        activity.findViewById(R.id.custom).setOnClickListener(this);
+
     }
 
     public void loadAbout() {
@@ -144,43 +140,5 @@ public class SampleHelper implements View.OnClickListener {
         AboutView view = builder.build();
 
         flHolder.addView(view);
-    }
-
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.dark:
-                if (theme != R.style.AppThemeDark) {
-                    theme = R.style.AppThemeDark;
-                }
-
-                TaskStackBuilder.create(activity)
-                        .addNextIntent(activity.getIntent())
-                        .startActivities();
-                break;
-            case R.id.light:
-                if (theme != R.style.AppThemeLight) {
-                    theme = R.style.AppThemeLight;
-                }
-
-                TaskStackBuilder.create(activity)
-                        .addNextIntent(activity.getIntent())
-                        .startActivities();
-                break;
-
-            case R.id.custom:
-                if (theme != R.style.AppThemeCustom) {
-                    theme = R.style.AppThemeCustom;
-                }
-
-                TaskStackBuilder.create(activity)
-                        .addNextIntent(activity.getIntent())
-                        .startActivities();
-                break;
-
-            default:
-                break;
-        }
     }
 }

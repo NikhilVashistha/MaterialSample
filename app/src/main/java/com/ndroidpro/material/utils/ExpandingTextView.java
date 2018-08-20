@@ -53,10 +53,10 @@ public class ExpandingTextView extends AppCompatTextView implements View.OnClick
 
     public void toggle(){
         if (mExpanded) {
-            tvReadMore.setText("Read More");
+            tvReadMore.setText("Read More...");
             collapse();
         } else {
-            tvReadMore.setText("Read Less");
+            tvReadMore.setText("Read Less...");
             expand();
         }
     }
@@ -68,11 +68,11 @@ public class ExpandingTextView extends AppCompatTextView implements View.OnClick
 
     @Override
     public final void onClick(View v) {
-        if (mExpanded) {
+        /*if (mExpanded) {
             collapse();
         } else {
             expand();
-        }
+        }*/
 
         if (mDelegateClickListener != null) {
             mDelegateClickListener.onClick(v);

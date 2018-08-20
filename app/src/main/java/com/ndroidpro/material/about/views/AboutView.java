@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Handler;
+import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -41,6 +42,7 @@ public final class AboutView extends FrameLayout {
     private TextView tvName;
     private TextView tvSubTitle;
     private ExpandingTextView tvBrief;
+    private AppCompatTextView tvReadMore;
 
     private TextView tvAppName;
     private TextView tvAppTitle;
@@ -94,7 +96,11 @@ public final class AboutView extends FrameLayout {
         ivCover = (ImageView) findViewById(R.id.cover);
         tvName = (TextView) findViewById(R.id.name);
         tvSubTitle = (TextView) findViewById(R.id.sub_title);
+
         tvBrief = (ExpandingTextView) findViewById(R.id.brief);
+        tvReadMore = (AppCompatTextView) findViewById(R.id.tv_read_more);
+
+
         tvAppName = (TextView) findViewById(R.id.app_name);
         tvAppTitle = (TextView) findViewById(R.id.app_title);
         ivAppIcon = (ImageView) findViewById(R.id.app_icon);
@@ -118,6 +124,28 @@ public final class AboutView extends FrameLayout {
 
         tvBrief.setText(bundle.getBrief());
         VisibleUtil.handle(tvBrief, bundle.getBrief());
+
+        tvBrief.setReadMoreBtnView(tvReadMore);
+        tvReadMore.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tvBrief.toggle();
+            }
+        });
+
+        if (tvBrief.getLineCount() == 0 && tvBrief.getText().length() != 0) {
+            tvBrief.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+                @Override
+                public void onLayoutChange(final View v, final int left, final int top,
+                                           final int right, final int bottom, final int oldLeft,
+                                           final int oldTop, final int oldRight, final int oldBottom) {
+                    tvBrief.removeOnLayoutChangeListener(this);
+                    showHideReadMoreBtn(tvBrief.getLineCount());
+                }
+            });
+        } else {
+            showHideReadMoreBtn(tvBrief.getLineCount());
+        }
 
         tvAppName.setText(bundle.getAppName());
         tvAppTitle.setText(bundle.getAppTitle());
@@ -153,6 +181,14 @@ public final class AboutView extends FrameLayout {
 
         loadLinks(bundle);
         loadActions(bundle);
+    }
+
+    private void showHideReadMoreBtn(int count) {
+        if (count >= 8) {
+            tvReadMore.setVisibility(VISIBLE);
+        } else {
+            tvReadMore.setVisibility(GONE);
+        }
     }
 
 
